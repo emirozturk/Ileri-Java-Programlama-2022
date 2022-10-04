@@ -1,6 +1,5 @@
 package org.emirozturk;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -29,7 +28,7 @@ public class Main {
         }
     }
     private static void listSquad(){
-        System.out.println(squad.getInfo());
+        System.out.println(squad.print());
     }
     private static void updateSquad() {
         System.out.println("Yeni isim giriniz");
@@ -48,6 +47,7 @@ public class Main {
 
     private static void addMember() {
         var newMember = new Member();
+        scanner.nextLine();
         System.out.println("İsim Giriniz");
         newMember.setName(scanner.nextLine());
         System.out.println("Yaş Giriniz");
