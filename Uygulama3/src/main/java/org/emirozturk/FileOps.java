@@ -6,10 +6,11 @@ import java.io.File;
 import java.nio.file.Paths;
 
 public class FileOps {
+
+    private static final ObjectMapper mapper = new ObjectMapper();
+
     public static Squad readFile(String filepath) {
         try {
-            var mapper = new ObjectMapper();
-
             return mapper.readValue(new File(getFilePath(filepath)), Squad.class);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -19,7 +20,6 @@ public class FileOps {
 
     public static void writeFile(Squad squad, String filepath) {
         try {
-            var mapper = new ObjectMapper();
             mapper.writeValue(new File(getFilePath(filepath)), squad);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
