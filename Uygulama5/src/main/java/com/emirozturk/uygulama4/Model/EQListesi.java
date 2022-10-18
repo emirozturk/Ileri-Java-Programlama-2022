@@ -2,7 +2,7 @@ package com.emirozturk.uygulama4.Model;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +10,8 @@ import java.util.List;
 
 public class EQListesi {
     List<EQ> liste;
-    public EQListesi(List<EQ> liste){
+
+    public EQListesi(List<EQ> liste) {
         this.liste = liste;
     }
 
@@ -18,15 +19,20 @@ public class EQListesi {
         return liste;
     }
 
-    public static EQListesi dosyadanOku(String dosyaYolu){
+    public static EQListesi dosyadanOku(String dosyaAdi) {
         try {
             List<EQ> liste = new ArrayList<>();
             int satirSayisi = 0;
-            var satirlar = Files.readAllLines(Path.of(dosyaYolu));
-            for(var satir:satirlar){
-                if(satirSayisi<2){satirSayisi++;continue;}
+            // her bilgisayarda calissin diye System.getProperty kullandik.
+            // Normalde Files.readAllines("C:/Users/username/desktop/boun.txt") gibi direkt elle verebilirdik
+            var satirlar = Files.readAllLines(Paths.get(System.getProperty("user.dir"), "Uygulama4", dosyaAdi));
+            for (var satir : satirlar) {
+                if (satirSayisi < 2) {
+                    satirSayisi++;
+                    continue;
+                }
                 var dizi = satir.split(" ");
-                var alanlar = Arrays.asList(dizi).stream().filter(x->x!="").toList();
+                var alanlar = Arrays.stream(dizi).filter(x -> x != "").toList();
                 liste.add(EQ.parseEt(alanlar));
             }
             return new EQListesi(liste);
@@ -44,6 +50,6 @@ public class EQListesi {
     }
 
     public List<EQ> ara(LocalDate tarihSaat) {
-        return liste.stream().filter(x->x.getTarihSaat().toLocalDate().equals(tarihSaat)).toList();
+        return liste.stream().filter(x -> x.getTarihSaat().toLocalDate().equals(tarihSaat)).toList();
     }
 }
