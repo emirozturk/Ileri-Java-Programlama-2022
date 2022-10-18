@@ -47,7 +47,7 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        liste = EQListesi.dosyadanOku("/Users/emirozturk/Desktop/boun.txt");
+        liste = EQListesi.dosyadanOku("boun.txt");
         listele(liste.getListe());
     }
 
