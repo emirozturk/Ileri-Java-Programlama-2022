@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TableView?>
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emirozturk.uygulama4.HelloController">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Open…" />
+                        <Menu mnemonicParsing="false" text="Open Recent" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" text="Save As…" />
+                        <MenuItem mnemonicParsing="false" text="Revert" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Undo" />
+                        <MenuItem mnemonicParsing="false" text="Redo" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Cut" />
+                        <MenuItem mnemonicParsing="false" text="Copy" />
+                        <MenuItem mnemonicParsing="false" text="Paste" />
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Select All" />
+                        <MenuItem mnemonicParsing="false" text="Unselect All" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Tarih">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <TextField fx:id="TbTarih" GridPane.columnIndex="1">
+                                    <opaqueInsets>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </TextField>
+                                <TextField fx:id="TbSaat" GridPane.columnIndex="3">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </TextField>
+                                <TextField fx:id="TbBoylam" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </TextField>
+                                <TextField fx:id="TbEnlem" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </TextField>
+                                <TextField fx:id="TbDerinlik" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </TextField>
+                                <TextField fx:id="TbMD" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </TextField>
+                                <TextField fx:id="TbML" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </TextField>
+                                <TextField fx:id="TbMw" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </TextField>
+                                <TextField fx:id="TbYer" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </TextField>
+                                <TextField fx:id="TbNitelik" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </TextField>
+                                <Label text="Enlem" GridPane.rowIndex="1">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <Label text="Saat" GridPane.columnIndex="2">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <Label text="MD" GridPane.rowIndex="2">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <Label text="Boylam" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <Label text="ML" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <Label text="Derinlik" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <Label text="Mw" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <Label text="Yer" GridPane.rowIndex="3">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <Label text="Nitelik" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Label>
+                                <Button fx:id="BtnEkle" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Ekle" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" onAction="#onBtnEkleClick">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Button>
+                                <Button fx:id="BtnSil" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Sil" GridPane.columnIndex="2" GridPane.rowIndex="4" onAction="#onBtnSilClick">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Button>
+                                <Button fx:id="BtnGuncelle" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Güncelle" GridPane.columnIndex="3" GridPane.rowIndex="4" onAction="#onBtnGuncelleClick">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Button>
+                                <Button fx:id="BtnAra" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Ara" GridPane.columnIndex="4" GridPane.rowIndex="4" onAction="#onBtnAraClick">
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </GridPane.margin>
+                                </Button>
+                            </children>
+                        </GridPane>
+                        <TableView fx:id="LbListe" prefHeight="200.0" prefWidth="200.0" />
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
