@@ -2,6 +2,10 @@ package com.emirozturk.benzerbul.REST;
 
 import com.emirozturk.benzerbul.Model.Response;
 import com.emirozturk.benzerbul.Model.User;
+import com.emirozturk.benzerbul.Service.IUserService;
+import com.emirozturk.benzerbul.Service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,31 +16,50 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/User")
 public class UserRESTController {
+    IUserService userService;
+    UserRESTController(IUserService userService){
+        this.userService = userService;
+    }
     @GetMapping("/")
-    Response<List<User>> getUsers(){
-        User user1 = new User(1,"emirozturk","1234",null);
-        User user2 = new User(2,"muhammetemrevatan","1234",null);
-        User user3 = new User(3,"emirozturk","1234",null);
-        User user4 = new User(4,"emirozturk","1234",null);
-        var liste = new ArrayList<User>(Arrays.asList(user1,user2,user3,user4));
-        return Response.Success(liste);
+    ResponseEntity<Response<List<User>>> getUsers(){
+        var response = userService.getUsers();
+        if(response.getIsSuccess())
+            return  ResponseEntity.ok(response);
+        else
+            return ResponseEntity.badRequest().body(response);
     }
     @GetMapping("/Login/username={username}&password={password}")
-    Response<User> login(@PathVariable String username,@PathVariable String password){
-        return Response.Success(new User());
+    ResponseEntity<Response<User>> login(@PathVariable String username,@PathVariable String password){
+        var response = userService.login(username,password);
+        if(response.getIsSuccess())
+            return  ResponseEntity.ok(response);
+        else
+            return ResponseEntity.badRequest().body(response);
     }
 
     @PostMapping("/")
-    Response<User> addUser(@RequestBody User user){
-        return Response.Success(new User());
+    ResponseEntity<Response<User>> addUser(@RequestBody User user){
+        var response = userService.addUser(user);
+        if(response.getIsSuccess())
+            return  ResponseEntity.ok(response);
+        else
+            return ResponseEntity.badRequest().body(response);
     }
     @DeleteMapping("/{username}")
-    Response<User> removeUser(@PathVariable String username){
-        return Response.Success(new User());
+    ResponseEntity<Response<User>> removeUser(@PathVariable String username){
+        var response = userService.removeUser(username);
+        if(response.getIsSuccess())
+            return  ResponseEntity.ok(response);
+        else
+            return ResponseEntity.badRequest().body(response);
     }
     @PutMapping("/{username}")
-    Response<User> updateUser(@PathVariable String username,@RequestBody User user){
-        return Response.Success(new User());
+    ResponseEntity<Response<User>> updateUser(@PathVariable String username,@RequestBody User user){
+        var response = userService.updateUser(username,user);
+        if(response.getIsSuccess())
+            return  ResponseEntity.ok(response);
+        else
+            return ResponseEntity.badRequest().body(response);
     }
 
 }
